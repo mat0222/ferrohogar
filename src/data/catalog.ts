@@ -8,6 +8,7 @@ import type {
   ProjectNeed,
   Review,
 } from '../types'
+import { asset } from '../lib/asset'
 
 const localPhotos: Record<string, string> = {
   'photo-1504148458008-aceba68b71de': '/img/drill.jpg',
@@ -32,7 +33,7 @@ const localPhotos: Record<string, string> = {
   'photo-1573496359142-b8d87734a5a2': '/img/technician.jpg',
 }
 
-const img = (id: string, _w = 900) => localPhotos[id] ?? '/img/tools.jpg'
+const img = (id: string, _w = 900) => asset(localPhotos[id] ?? '/img/tools.jpg')
 
 export const categories: Category[] = [
   {
@@ -1566,7 +1567,7 @@ export const faqs = [
   { q: '¿Puedo pedir instalación junto con la compra?', a: 'En el checkout o desde Instalación podés reservar un turno. Un técnico capacitado se asigna con seguimiento en tiempo real.' },
 ]
 
-export const heroImage = '/img/hero.jpg'
-export const installHero = '/img/plumber.jpg'
-export const workshopImage = '/img/construction.jpg'
-export const benefitsImage = '/img/tools.jpg'
+export const heroImage = asset('/img/hero.jpg')
+export const installHero = asset('/img/plumber.jpg')
+export const workshopImage = asset('/img/construction.jpg')
+export const benefitsImage = asset('/img/tools.jpg')

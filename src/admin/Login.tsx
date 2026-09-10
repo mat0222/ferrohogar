@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { Link, Navigate, useNavigate } from 'react-router-dom'
 import { Logo } from '../components/Logo'
+import { asset } from '../lib/asset'
 import { useAdmin } from './context'
 import { aBtn, aInput } from './ui'
 
@@ -15,7 +16,7 @@ export function AdminLogin() {
 
   return (
     <div className="grid min-h-screen bg-[#101114] lg:grid-cols-[1.1fr_0.9fr]">
-      <div className="hidden items-center justify-center bg-[url('/img/tools.jpg')] bg-cover bg-center lg:flex">
+      <div className="hidden items-center justify-center bg-cover bg-center lg:flex" style={{ backgroundImage: `url(${asset('/img/tools.jpg')})` }}>
         <div className="rounded-2xl bg-black/70 p-10 text-white">
           <Logo stacked />
           <p className="mt-4 max-w-sm text-sm text-white/80">Panel de administración de la ferretería online.</p>

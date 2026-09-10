@@ -2,6 +2,7 @@ import { useMemo, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import { useAdmin } from './context'
 import type { AdminProduct } from './types'
+import { asset } from '../lib/asset'
 import { uid } from '../lib/utils'
 import { aBtn, aBtnGhost, aCard, aInput, BackLink, PageHeader } from './ui'
 import { categories as catalogCategories, brands as catalogBrands } from '../data/catalog'
@@ -135,7 +136,7 @@ export function AdminProductForm() {
               }}
               className="w-28 cursor-grab rounded-xl border border-slate-200 p-1"
             >
-              <img src={src} alt="" className="h-20 w-full rounded-lg object-cover" />
+              <img src={asset(src)} alt="" className="h-20 w-full rounded-lg object-cover" />
               <button type="button" className="mt-1 w-full cursor-pointer border-0 bg-transparent text-xs text-red-600" onClick={() => patch('images', form.images.filter((_, idx) => idx !== i))}>Quitar</button>
             </div>
           ))}

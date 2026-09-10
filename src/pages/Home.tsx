@@ -13,6 +13,7 @@ import { ProductCard } from '../components/product/ProductCard'
 import { CategoryIcon } from '../components/CategoryIcon'
 import { SafeImage } from '../components/SafeImage'
 import { benefitsImage, categories, kits, projectNeeds, workshopImage } from '../data/catalog'
+import { asset } from '../lib/asset'
 import { formatPrice } from '../lib/utils'
 import { useStore } from '../context/StoreContext'
 import { useAdmin } from '../admin/context'
@@ -34,7 +35,7 @@ export function Home() {
 
   const nodes: Record<string, ReactNode> = {
     hero: (
-      <section key="hero" className="relative grid min-h-[520px] items-center bg-[#1a1a1a] bg-cover bg-center text-white" style={{ backgroundImage: `url(${hero.image})` }}>
+      <section key="hero" className="relative grid min-h-[520px] items-center bg-[#1a1a1a] bg-cover bg-center text-white" style={{ backgroundImage: `url(${asset(hero.image)})` }}>
         <div className="absolute inset-0 bg-gradient-to-r from-black/62 via-black/38 to-black/18" />
         <div className={cn(container, 'relative max-w-[640px] py-[72px]')}>
           <p className="mb-2.5 text-[0.85rem] font-extrabold tracking-[0.14em]">{hero.kicker}</p>
@@ -153,7 +154,7 @@ export function Home() {
       </section>
     ),
     benefits: (
-      <section key="benefits" className="relative overflow-hidden bg-[#1a1a1a] bg-cover bg-center py-10 text-white" style={{ backgroundImage: `url(${benefitsImage})` }}>
+      <section key="benefits" className="relative overflow-hidden bg-[#1a1a1a] bg-cover bg-center py-10 text-white" style={{ backgroundImage: `url(${asset(benefitsImage)})` }}>
         <div className="absolute inset-0 bg-black/72" />
         <div className={cn(container, 'relative z-[1] grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4')}>
           {[

@@ -1,3 +1,5 @@
+import { asset } from '../lib/asset'
+
 const FALLBACK = '/img/tools.jpg'
 
 type Props = {
@@ -9,12 +11,13 @@ type Props = {
 export function SafeImage({ src, alt, className }: Props) {
   return (
     <img
-      src={src}
+      src={asset(src)}
       alt={alt}
       className={className}
       onError={(e) => {
-        if (e.currentTarget.src.endsWith(FALLBACK)) return
-        e.currentTarget.src = FALLBACK
+        const fallback = asset(FALLBACK)
+        if (e.currentTarget.src.includes('tools.jpg')) return
+        e.currentTarget.src = fallback
       }}
     />
   )

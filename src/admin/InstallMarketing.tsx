@@ -1,6 +1,7 @@
 import { useMemo, useState } from 'react'
 import { useAdmin } from './context'
 import type { AdminCoupon, AdminInstallation, AdminPromo, AdminTechnician, InstallStatus, PromoType, ReviewStatus } from './types'
+import { asset } from '../lib/asset'
 import { uid } from '../lib/utils'
 import { aBtn, aBtnDanger, aBtnGhost, aCard, aInput, Badge, PageHeader, Tabs } from './ui'
 
@@ -76,7 +77,7 @@ export function AdminInstallations() {
           <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
             {state.technicians.map((t) => (
               <article key={t.id} className={aCard}>
-                <img src={t.photo} alt="" className="mb-3 h-16 w-16 rounded-full object-cover" />
+                <img src={asset(t.photo)} alt="" className="mb-3 h-16 w-16 rounded-full object-cover" />
                 <strong>{t.name}</strong>
                 <p className="m-0 text-sm">{t.specialty} · ⭐ {t.rating}</p>
                 <p className="m-0 text-sm text-slate-500">{t.zones.join(' · ')} · {t.jobs} trabajos</p>

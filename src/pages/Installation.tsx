@@ -4,6 +4,7 @@ import { BadgeCheck, Calendar, MapPin, UserRound } from 'lucide-react'
 import { installHero, installServices, professionals, zones } from '../data/catalog'
 import { SafeImage } from '../components/SafeImage'
 import { useStore } from '../context/StoreContext'
+import { asset } from '../lib/asset'
 import { formatPrice } from '../lib/utils'
 import { btnPrimary, card, choice, choiceOn, cn, container, field, formGrid, formTwo, input, muted, panel, section } from '../lib/cn'
 
@@ -46,7 +47,7 @@ export function Installation() {
 
   return (
     <>
-      <section className="relative grid min-h-[320px] items-end bg-[#1a1a1a] bg-cover bg-center text-white" style={{ backgroundImage: `url(${installHero})` }}>
+      <section className="relative grid min-h-[320px] items-end bg-[#1a1a1a] bg-cover bg-center text-white" style={{ backgroundImage: `url(${asset(installHero)})` }}>
         <div className="absolute inset-0 bg-gradient-to-b from-black/25 via-black/40 to-black/68" />
         <div className={cn(container, 'relative z-[1] py-12')}>
           <h1>Instalación profesional y segura</h1>
